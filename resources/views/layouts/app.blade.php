@@ -27,10 +27,9 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Dashboard</a>
-  <a href="#">Laporan Penjualan</a>
-  <a href="#">Laporan Pemasukkan</a>
-  <a href="#">Laporan Pengeluaran</a>
+  <a href="#">Data Pegawai</a>
+  <a href="#">Download Slip Gaji</a>
+  <a href="#">History Data Gaji</a>
 </div>
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
