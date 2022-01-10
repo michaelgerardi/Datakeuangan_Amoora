@@ -11,4 +11,9 @@ class sewer_controller extends Controller
         $data_sewer = sewer::all();
         return view();
     }
+
+    public function tambah_sewer(){
+        \App\sewer::create($request->all());
+        return redirect('sewer')->with('sukses','silahkan melakukan pengecekan data anda!');
+    }
 }
