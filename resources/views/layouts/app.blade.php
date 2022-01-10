@@ -24,7 +24,6 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
             <body>
-
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">Data Pegawai</a>
@@ -36,10 +35,12 @@
 <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
 }
 </script>
    
@@ -96,9 +97,10 @@ function closeNav() {
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 main">
             @yield('content')
         </main>
     </div>
+  
 </body>
 </html>
