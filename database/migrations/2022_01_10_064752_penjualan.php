@@ -13,11 +13,13 @@ class Penjualan extends Migration
      */
     public function up()
     {
+        Schema::create('penjualan', function (Blueprint $table){
         $table->increments('id_penjualan');
-        $table->increments('id_admin');
-        $table->increments('id_detail');
-        $table->increments('id_transaksi');
+        $table->string('id_admin');
+        $table->string('id_detail');
+        $table->string('id_transaksi');
         $table->timestamps();
+    });
     }
 
     /**

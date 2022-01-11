@@ -13,12 +13,14 @@ class Sewer extends Migration
      */
     public function up()
     {
+        Schema::create('sewer', function (Blueprint $table){
         $table->increments('id_sewer');
-        $table->increments('id_admin');
+        $table->string('id_admin');
         $table->string('nama_sewer');
         $table->string('gaji_sewer');
         $table->date('tgl_gaji');
         $table->timestamps();
+    });
     }
 
     /**

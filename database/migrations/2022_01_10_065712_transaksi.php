@@ -13,11 +13,13 @@ class Transaksi extends Migration
      */
     public function up()
     {
+        Schema::create('transaksi', function (Blueprint $table){
         $table->increments('id_transaksi');
         $table->string('total_transaksi');
         $table->string('avg_transaksi');
         $table->string('jumlah_transaksi');
         $table->timestamps();
+    });
     }
 
     /**

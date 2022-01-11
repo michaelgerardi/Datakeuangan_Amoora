@@ -15,7 +15,7 @@ class Pemasukkan extends Migration
     {
         Schema::create('pemasukkan', function (Blueprint $table) {
             $table->increments('id_pemasukkan');
-            $table->increments('id_penjualan');
+            $table->string('id_penjualan');
             $table->string('total_pendapatan');
             $table->string('avg_perbulan');
             $table->string('laba_kotor');

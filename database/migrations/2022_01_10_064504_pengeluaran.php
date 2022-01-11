@@ -13,12 +13,14 @@ class Pengeluaran extends Migration
      */
     public function up()
     {
+        Schema::create('pengeluaran', function (Blueprint $table){
         $table->increments('id_pengeluaran');
-        $table->increments('id_admin');
+        $table->string('id_admin');
         $table->string('ket_pengeluaran');
         $table->string('jml_pengeluaran');
         $table->date('tgl_pengeluaran');
         $table->timestamps();
+    });
     }
 
     /**
