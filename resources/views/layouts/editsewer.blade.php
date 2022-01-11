@@ -1,4 +1,4 @@
-<form action="/sewer/tambah" method="POST">
+<form action="{{route('editsewer',['id'=>$data_sewer->id])}}" method="GET">
 {{csrf_field()}}
   <div class="form-group {{$errors->has('nama_sewer')? 'has-error':''}}">
         <label class="control-label col-sm-2" for="email">Nama Sewer</label>
@@ -21,5 +21,5 @@
     </div>
   </div>
   <button type="submit" class="btn btn-default">Save</button>
-  <a href="/editsewer/{{}}" class="btn btn-default">update</a></td>
+  
 </form>

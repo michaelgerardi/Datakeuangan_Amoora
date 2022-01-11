@@ -28,3 +28,4 @@ Route::get('/admin/logout', [App\Http\Controllers\Auth\authadminController::clas
 Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index'])->name('homeadmin');
 
 Route::post('/sewer/tambah',[App\Http\Controllers\sewer_controller::class, 'tambah_sewer']);
+Route::get('editsewer/{id}',[App\Http\Controllers\sewer_controller::class, 'edit_sewer']);
