@@ -21,5 +21,21 @@
     </div>
   </div>
   <button type="submit" class="btn btn-default">Save</button>
-  <a href="/editsewer/{{}}" class="btn btn-default">update</a></td>
+  <a href="" class="btn btn-default">update</a></td>
+  <div class="table-responsive">
+  <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+      <tr>Nama Sewer</tr>
+      <tr>Gaji Sewer</tr>
+      <tr>Tanggal Penggajian</tr>
+    </thead>
+    @foreach ($data_sewer as $sewer)
+      <td>{{$sewer->nama_sewer}}</td>
+      <td>{{$sewer->gaji_sewer}}</td>
+      <td>{{$sewer->tgl_gaji}}</td>
+    @endforeach
+  </div>
+ 
+
+  </table>
 </form>
