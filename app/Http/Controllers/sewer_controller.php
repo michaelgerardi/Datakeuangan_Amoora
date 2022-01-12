@@ -19,16 +19,16 @@ class sewer_controller extends Controller
     dd($request);
     }
 
-    public function edit_sewer(){
-        $data_sewer = sewer::find($id);
+    public function edit_sewer($id_sewer, Request $request){
+        $data_sewer = sewer::find($id_sewer);
         $data_sewer = $request->input('nama_sewer');
         $data_sewer = $request->input('gaji_sewer');
         $data_sewer = $request->input('tgl_gaji');
         return redirect()->route('home');
     }
 
-    public function findidsewer(){
-        $data_sewer = sewer::find($id);
+    public function findidsewer($id_sewer){
+        $data_sewer = sewer::find($id_sewer);
         $data = [
             'title' => 'sewer',
             'data_sewer' => $data_sewer
@@ -36,8 +36,8 @@ class sewer_controller extends Controller
         return view ('layouts.home', $data);
     }
 
-    public function deletesewer(){
-        $data_sewer = sewer::find($id);
+    public function deletesewer($id_sewer){
+        $data_sewer = sewer::find($id_sewer);
         $data_sewer->delete();
         return redirect()->back();
     }

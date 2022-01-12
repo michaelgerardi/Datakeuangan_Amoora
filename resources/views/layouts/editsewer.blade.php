@@ -1,4 +1,4 @@
-<form action="{{route('editsewer',['id'=>$data_sewer->id])}}" method="GET">
+<form action="{{route('editsewer',['id_sewer'=>$data_sewer->id_sewer])}}" method="GET">
 {{csrf_field()}}
   <div class="form-group {{$errors->has('nama_sewer')? 'has-error':''}}">
         <label class="control-label col-sm-2" for="email">Nama Sewer</label>

@@ -21,7 +21,7 @@
     </div>
   </div>
   <button type="submit" class="btn btn-default">Save</button>
-  <a href="" class="btn btn-default">update</a></td>
+  
   <div class="table-responsive">
   <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
@@ -33,6 +33,8 @@
       <td>{{$sewer->nama_sewer}}</td>
       <td>{{$sewer->gaji_sewer}}</td>
       <td>{{$sewer->tgl_gaji}}</td>
+      <td><a href="/editsewer/{{$sewer->id_sewer}}" class="btn btn-default">update</a></td>
+      <td><a href="/deletesewer/{{$sewer->id_sewer}}" class="btn btn-default">delete</a></td>
     @endforeach
   </div>
  
