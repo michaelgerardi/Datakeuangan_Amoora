@@ -22,6 +22,7 @@ class sewer_controller extends Controller
     public function edit_sewer($id_sewer, Request $request){
         $data_sewer = sewer::find($id_sewer);
         $data_sewer = $request->input('nama_sewer');
+        $data_sewer = $request->input('position');
         $data_sewer = $request->input('gaji_sewer');
         $data_sewer = $request->input('tgl_gaji');
         return redirect()->route('home');

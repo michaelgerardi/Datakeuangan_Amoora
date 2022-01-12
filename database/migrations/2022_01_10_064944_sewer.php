@@ -17,6 +17,7 @@ class Sewer extends Migration
         $table->increments('id_sewer');
         $table->string('id_admin');
         $table->string('nama_sewer');
+        $table->string('position');
         $table->string('gaji_sewer');
         $table->date('tgl_gaji');
         $table->timestamps();
