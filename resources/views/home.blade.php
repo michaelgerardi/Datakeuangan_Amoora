@@ -44,6 +44,7 @@
       <td>{{$sewer->tgl_gaji}}</td>
       <td><a href="/editsewer/{{$sewer->id_sewer}}" class="btn btn-default">update</a></td>
       <td><a href="/deletesewer/{{$sewer->id_sewer}}" class="btn btn-default">delete</a></td>
+      <td><a href="/downloadPDF/sewerpdf"> download file</a></td>
     @endforeach
   </div>
  

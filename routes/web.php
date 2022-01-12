@@ -30,3 +30,6 @@ Route::get('/admin/home', [App\Http\Controllers\AdminController::class, 'index']
 Route::post('/sewer/tambah',[App\Http\Controllers\sewer_controller::class, 'tambah_sewer']);
 Route::get('editsewer/{id_sewer}',[App\Http\Controllers\sewer_controller::class, 'edit_sewer']);
 Route::get('/deletesewer/{id_sewer}',[App\Http\Controllers\sewer_controller::class, 'deletesewer']);
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+route::get('/downloadPDF/sewerpdf',[App\Http\Controllers\sewer_controller::class, 'download_sewer'])->name('downloadpdf_sewer');

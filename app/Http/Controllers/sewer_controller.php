@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\sewer;
+use PDF;
 
 class sewer_controller extends Controller
 {
@@ -41,6 +42,12 @@ class sewer_controller extends Controller
         $data_sewer = sewer::find($id_sewer);
         $data_sewer->delete();
         return redirect()->back();
+    }
+
+    public function download_sewer(){
+        $data_sewer = sewer::all();
+        $pdf = PDF::loadView('layouts.pdf',compact('data_sewer'));
+        return $pdf->download('Laporan Penggajian Sewer.pdf');
     }
 
 }
