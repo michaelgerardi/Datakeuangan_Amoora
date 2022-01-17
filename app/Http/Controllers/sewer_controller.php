@@ -22,10 +22,14 @@ class sewer_controller extends Controller
 
     public function edit_sewer($id_sewer, Request $request){
         $data_sewer = sewer::find($id_sewer);
-        $data_sewer = $request->input('nama_sewer');
-        $data_sewer = $request->input('position');
-        $data_sewer = $request->input('gaji_sewer');
-        $data_sewer = $request->input('tgl_gaji');
+        $data_sewer = $request->input('nip');
+        $data_sewer = $request->input('nama');
+        $data_sewer = $request->input('tgl_lahir');
+        $data_sewer = $request->input('alamat');
+        $data_sewer = $request->input('no_hp');
+        $data_sewer = $request->input('jenis_kelamin');
+        $data_sewer = $request->input('gaji');
+        $data_sewer = $request->input('posisi');
         return redirect()->route('sewer');
     }
 
