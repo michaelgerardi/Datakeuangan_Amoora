@@ -22,25 +22,25 @@
     </div>
   </div>
   <button type="submit" class="btn btn-default">Save</button>
-  
-  <div class="table-responsive">
-  <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-    <thead>
-      <tr>Total Transaksi</tr>
-      <tr>Average Transaksi</tr>
-      <tr>Jumlah Transaksi</tr>
-    </thead>
-    @foreach ($data_sewer as $sewer)
-      <td>{{$sewer->nama_sewer}}</td>
-      <td>{{$sewer->position}}</td>
-      <td>{{$sewer->gaji_sewer}}</td>
-      <td>{{$sewer->tgl_gaji}}</td>
-      <td><a href="/editsewer/{{$sewer->id_sewer}}" class="btn btn-default">update</a></td>
-      <td><a href="/deletesewer/{{$sewer->id_sewer}}" class="btn btn-default">delete</a></td>
-      <td><a href="/downloadPDF/sewerpdf"> download file</a></td>
-    @endforeach
-  </div>
- 
-
-  </table>
 </form>
+
+<div class="table-responsive">
+<table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <tr>
+      <th>Total Transaksi</th>
+      <th>Average Transaksi</th>
+      <th>Jumlah Transaksi</th>
+    </tr>
+    @foreach ($data_transaksi as $transaksi)
+    <tr>
+      <td>{{$transaksi->total_transaksi}}</td>
+      <td>{{$transaksi->avg_transaksi}}</td>
+      <td>{{$transaksi->jumlah_transaksi}}</td>
+      <td><a href="/edittransaksi/{{$transaksi->id_transaksi}}" class="btn btn-default">update</a></td>
+      <td><a href="/deletetransaksi/{{$transaksi->id_transaksi}}" class="btn btn-default">delete</a></td>
+      <td><a href="/downloadPDF/transaksipdf"> download file</a></td>
+    </tr>
+    @endforeach
+  
+  </table>
+  </div>

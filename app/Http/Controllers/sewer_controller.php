@@ -26,7 +26,7 @@ class sewer_controller extends Controller
         $data_sewer = $request->input('position');
         $data_sewer = $request->input('gaji_sewer');
         $data_sewer = $request->input('tgl_gaji');
-        return redirect()->route('home');
+        return redirect()->route('sewer');
     }
 
     public function findidsewer($id_sewer){
@@ -35,7 +35,7 @@ class sewer_controller extends Controller
             'title' => 'sewer',
             'data_sewer' => $data_sewer
         ];
-        return view ('layouts.home', $data);
+        return view ('layouts.editsewer', $data);
     }
 
     public function deletesewer($id_sewer){

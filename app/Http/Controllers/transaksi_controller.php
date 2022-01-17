@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\transaksi;
+use App\Models\transaksi;
+use PDF;
 
 class transaksi_controller extends Controller
 {
@@ -13,7 +14,7 @@ class transaksi_controller extends Controller
     }
 
     public function tambah_transaksi(Request $request){
-        App\Models\transaksi::create($request->all());
+        \App\Models\transaksi::create($request->all());
         dd($request);
     }
 
@@ -25,19 +26,25 @@ class transaksi_controller extends Controller
         return redirect()->route('transaksi');
     }
 
-    public function findidtransaksi(){
-        $data_transaksi = transaksi::find($id_transaksi);
+    public function findidtransaksi($id_transaksi){
+        $data_transaksi = transaksi::where('id_transaksi',$id_transaksi)->get();
         $data = [
             'title' => 'transaksi',
             'data_transaksi' => $data_transaksi
         ];
-        return view ('layouts.transaksi', $data);
+        return view ('layouts.edittransaksi', $data);
     }
 
     public function deletetransaksi($id_transaksi){
-        $data_transaksi = sewer::find($id_transaksi);
+        $data_transaksi = transaksi::find($id_transaksi);
         $data_transaksi->delete();
         return redirect()->back();
+    }
+
+    public function download_transaksi(){
+        $data_transaksi = transaksi::all();
+        $pdf = PDF::loadView('layouts.pdftrans',compact('data_transaksi'));
+        return $pdf->download('Laporan Transaksi Amoora.pdf');
     }
 
 }
