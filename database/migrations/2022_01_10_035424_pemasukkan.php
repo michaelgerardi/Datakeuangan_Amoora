@@ -14,7 +14,7 @@ class Pemasukkan extends Migration
     public function up()
     {
         Schema::create('pemasukkan', function (Blueprint $table) {
-            $table->increments('id_pemasukkan');
+            $table->id('id_pemasukkan');
             $table->string('id_penjualan');
             $table->string('total_pendapatan');
             $table->string('avg_perbulan');

@@ -35,13 +35,19 @@ Route::get('/deletesewer/{id_sewer}',[App\Http\Controllers\sewer_controller::cla
 Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
 route::get('/downloadPDF/sewerpdf',[App\Http\Controllers\sewer_controller::class, 'download_sewer'])->name('downloadpdf_sewer');
 route::get('/downloadPDF/transaksipdf',[App\Http\Controllers\transaksi_controller::class, 'download_transaksi'])->name('downloadpdf_transaksi');
+route::get('/downloadPDF/pemasukkanpdf',[App\Http\Controllers\pemasukkan_controller::class, 'download_pemasukkan'])->name('downloadpdf_pemasukkan');
 
 Route::get('/transaksi', [App\Http\Controllers\transaksi_controller::class, 'index_transaksi'])->name('transaksi');
 Route::post('/transaksi/tambah',[App\Http\Controllers\transaksi_controller::class, 'tambah_transaksi']);
 Route::get('/edittransaksi/{id_transaksi}',[App\Http\Controllers\transaksi_controller::class, 'findidtransaksi'])->name('edittransaksi');
 Route::get('/deletetransaksi/{id_transaksi}',[App\Http\Controllers\transaksi_controller::class, 'deletetransaksi']);
 
+Route::get('/penggajian', [App\Http\Controllers\penggajian_controller::class, 'index_gaji'])->name('penggajian');
+Route::post('/penggajian/tambah',[App\Http\Controllers\penggajian_controller::class, 'tambah_gaji']);
+Route::get('/editgaji/{id_gaji}',[App\Http\Controllers\penggajian_controller::class, 'findidgaji'])->name('editgaji');
+Route::get('/deletegaji/{id_gaji}',[App\Http\Controllers\penggajian_controller::class, 'deletegaji']);
+
 Route::get('/pemasukkan', [App\Http\Controllers\pemasukkan_controller::class, 'index_pemasukkan'])->name('pemasukkan');
 Route::post('/pemasukkan/tambah',[App\Http\Controllers\pemasukkan_controller::class, 'tambah_pemasukkan']);
-Route::get('edittranosaksi/{id_transaksi}',[App\Http\Controllers\transaksi_controller::class, 'edit_transaksi']);
-Route::get('/deletetransaksi/{id_transaksi}',[App\Http\Controllers\transaksi_controller::class, 'deletetransaksi']);
+Route::get('/editpemasukkan/{id_pemasukkan}',[App\Http\Controllers\pemasukkan_controller::class, 'findidpemasukkan'])->name('editpemasukkan');
+Route::get('/deletepemasukkan/{id_pemasukkan}',[App\Http\Controllers\pemasukkan_controller::class, 'deletepemasukkan']);

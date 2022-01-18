@@ -1,6 +1,6 @@
-<form action="/pemasukkan/tambah" method="POST">
+<form action="" method="GET">
 {{csrf_field()}}
-  <div class="form-group {{$errors->has('total_pendapatan')? 'has-error':''}}">
+<div class="form-group {{$errors->has('total_pendapatan')? 'has-error':''}}">
         <label class="control-label col-sm-2" for="email">Total Pendapatan</label>
     <div class="col-sm-10">
       <textarea name="total_pendapatan" class="form-control" id="email" placeholder="total pendapatan">
@@ -29,27 +29,4 @@
   </div>
   <button type="submit" class="btn btn-default">Save</button>
   
-  <div class="table-responsive">
-  <table  class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-    <tr>
-      <th>Total Pendapatan</th>
-      <th>Average per Bulan</th>
-      <th>Laba Kotor</th>
-      <th>Laba Bersih</th>
-    </tr>
-    @foreach ($data_pemasukkan as $pemasukkan)
-    <tr>
-      <td>{{$pemasukkan->total_pendapatan}}</td>
-      <td>{{$pemasukkan->avg_perbulan}}</td>
-      <td>{{$pemasukkan->laba_kotor}}</td>
-      <td>{{$pemasukkan->laba_bersih}}</td>
-      <td><a href="/editpemasukkan/{{$pemasukkan->id_pemasukkan}}" class="btn btn-default">update</a></td>
-      <td><a href="/deletepemasukkan/{{$pemasukkan->id_pemasukkan}}" class="btn btn-default">delete</a></td>
-      <td><a href="/downloadPDF/pemasukkanpdf"> download file</a></td>
-    </tr>
-    @endforeach
-  </div>
- 
-
-  </table>
 </form>

@@ -10,10 +10,10 @@ class pemasukkan_controller extends Controller
 {
     public function index_pemasukkan(){
         $data_pemasukkan = pemasukkan::all();
-        return view();
+        return view('pemasukkan',compact('data_pemasukkan'));
     }
 
-    public function tambah_pemasukkan(){
+    public function tambah_pemasukkan(Request $request){
         \App\Models\pemasukkan::create($request->all());
         dd($request);
     }
@@ -28,23 +28,22 @@ class pemasukkan_controller extends Controller
     }
 
     public function findidpemasukkan($id_pemasukkan){
-        $data_pemasukkan = pemasukkan::find($id_pemasukkan);
+        $data_pemasukkan = pemasukkan::where('id_pemasukkan',$id_pemasukkan)->first();
         $data = [
             'title' => 'pemasukkan',
             'data_pemasukkan' => $data_pemasukkan
         ];
-        return view ('layouts.pemasukkan', $data);
+        return view ('layouts.editpemasukkan', $data);
     }
 
     public function deletepemasukkan($id_pemasukkan){
-        $data_pemasukkan = pemasukkan::find($id_pemasukkan);
-        $data_pemasukkan->delete();
+        pemasukkan::where('id_pemasukkan',$id_pemasukkan)->delete();
         return redirect()->back();
     }
 
     public function download_pemasukkan(){
         $data_pemasukkan = pemasukkan::all();
-        $pdf = PDF::loadView('layouts.pdfmasuk',compact('data_pemasukkan'));
+        $pdf = PDF::loadView('layouts.pdfpemasukkan',compact('data_pemasukkan'));
         return $pdf->download('Laporan Pemasukkan Amoora.pdf');
     }
 }
