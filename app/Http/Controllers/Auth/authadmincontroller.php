@@ -32,9 +32,9 @@ class authadmincontroller extends Controller
         ])) {
             $user = auth()->user();
 
-            return redirect()->route('homeadmin');
+            return redirect()->intended(url('/admin/home'));
         } else {
-            return redirect()->route('admin.login')->withError('Credentials doesn\'t match.');
+            return redirect()->back()->withError('Credentials doesn\'t match.');
         }
     }
 
