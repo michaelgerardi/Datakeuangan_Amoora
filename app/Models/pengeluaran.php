@@ -9,4 +9,5 @@ class pengeluaran extends Model
 {
     protected $table='pengeluaran';
     protected $fillable=['ket_pengeluaran','jml_pengeluaran','tgl_pengeluaran'];
+    protected $primarykey='id_pengeluaran';
 }

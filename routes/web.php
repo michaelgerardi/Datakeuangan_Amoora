@@ -36,6 +36,7 @@ Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
 route::get('/downloadPDF/sewerpdf',[App\Http\Controllers\sewer_controller::class, 'download_sewer'])->name('downloadpdf_sewer');
 route::get('/downloadPDF/transaksipdf',[App\Http\Controllers\transaksi_controller::class, 'download_transaksi'])->name('downloadpdf_transaksi');
 route::get('/downloadPDF/pemasukkanpdf',[App\Http\Controllers\pemasukkan_controller::class, 'download_pemasukkan'])->name('downloadpdf_pemasukkan');
+route::get('/downloadPDF/pengeluaranpdf',[App\Http\Controllers\pengeluaran_controller::class, 'download_pengeluaran'])->name('downloadpdf_pengeluaran');
 
 Route::get('/transaksi', [App\Http\Controllers\transaksi_controller::class, 'index_transaksi'])->name('transaksi');
 Route::post('/transaksi/tambah',[App\Http\Controllers\transaksi_controller::class, 'tambah_transaksi']);
@@ -51,3 +52,8 @@ Route::get('/pemasukkan', [App\Http\Controllers\pemasukkan_controller::class, 'i
 Route::post('/pemasukkan/tambah',[App\Http\Controllers\pemasukkan_controller::class, 'tambah_pemasukkan']);
 Route::get('/editpemasukkan/{id_pemasukkan}',[App\Http\Controllers\pemasukkan_controller::class, 'findidpemasukkan'])->name('editpemasukkan');
 Route::get('/deletepemasukkan/{id_pemasukkan}',[App\Http\Controllers\pemasukkan_controller::class, 'deletepemasukkan']);
+
+Route::get('/pengeluaran', [App\Http\Controllers\pengeluaran_controller::class, 'index_pengeluaran'])->name('pengeluaran');
+Route::post('/pengeluaran/tambah',[App\Http\Controllers\pengeluaran_controller::class, 'tambah_pengeluaran']);
+Route::get('/editpengeluaran/{id_pengeluaran}',[App\Http\Controllers\pengeluaran_controller::class, 'findidpengeluaran'])->name('editpengeluaran');
+Route::get('/deletepengeluaran/{id_pengeluaran}',[App\Http\Controllers\pengeluaran_controller::class, 'deletepengeluaran']);
