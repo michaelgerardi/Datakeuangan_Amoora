@@ -37,6 +37,7 @@ route::get('/downloadPDF/sewerpdf',[App\Http\Controllers\sewer_controller::class
 route::get('/downloadPDF/transaksipdf',[App\Http\Controllers\transaksi_controller::class, 'download_transaksi'])->name('downloadpdf_transaksi');
 route::get('/downloadPDF/pemasukkanpdf',[App\Http\Controllers\pemasukkan_controller::class, 'download_pemasukkan'])->name('downloadpdf_pemasukkan');
 route::get('/downloadPDF/pengeluaranpdf',[App\Http\Controllers\pengeluaran_controller::class, 'download_pengeluaran'])->name('downloadpdf_pengeluaran');
+route::get('/downloadPDF/gajipdf',[App\Http\Controllers\penggajian_controller::class, 'download_gaji'])->name('downloadpdf_gaji');
 
 Route::get('/transaksi', [App\Http\Controllers\transaksi_controller::class, 'index_transaksi'])->name('transaksi');
 Route::post('/transaksi/tambah',[App\Http\Controllers\transaksi_controller::class, 'tambah_transaksi']);
