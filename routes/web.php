@@ -58,3 +58,9 @@ Route::get('/pengeluaran', [App\Http\Controllers\pengeluaran_controller::class, 
 Route::post('/pengeluaran/tambah',[App\Http\Controllers\pengeluaran_controller::class, 'tambah_pengeluaran']);
 Route::get('/editpengeluaran/{id_pengeluaran}',[App\Http\Controllers\pengeluaran_controller::class, 'findidpengeluaran'])->name('editpengeluaran');
 Route::get('/deletepengeluaran/{id_pengeluaran}',[App\Http\Controllers\pengeluaran_controller::class, 'deletepengeluaran']);
+
+Route::get('/keuntungan', [App\Http\Controllers\keuntungan_controller::class, 'index_keuntungan'])->name('keuntungan');
+Route::post('/keuntungan/tambah',[App\Http\Controllers\keuntungan_controller::class, 'tambah_keuntungan']);
+Route::get('/editkeuntungan/{id_keuntungan}',[App\Http\Controllers\keuntungan_controller::class, 'findidkeuntungan'])->name('editkeuntungan');
+Route::get('/deletekeuntungan/{id_keuntungan}',[App\Http\Controllers\keuntungan_controller::class, 'deletekeuntungan']);
+
